@@ -3,10 +3,10 @@ Table:
     Properties:
         TableName: ${self:custom.tableName}
         AttributeDefinitions:
-            - AttributName: id
-              AttributType: S
-            - AttributName: commitMessage
-              AttributType: S
+            - AttributeName: id
+              AttributeType: S
+            - AttributeName: commitMessage
+              AttributeType: S
         KeySchema:
             - AttributeName: id
               KeyType: HASH
