@@ -17,7 +17,7 @@ custom:
   dbReadCapacityUnits: ${self:provider.environment.DbReadCapacityUnits}
 
 resources:
-  Resource:
+  Resources:
     ${file(./config/serverless/resources/dynamo.hero.table.yaml)}
 
 functions:
@@ -25,7 +25,7 @@ functions:
     handler: handler.scheduler
     events:
       - schedule:
-          reate: ${self:custom.schedulerRate}
+          rate: ${self:custom.schedulerRate}
           name: schedule-commit-message-${self:provider.stage}
           description: get commit messages each minute
           enabled: ${self:custom.enabled}
