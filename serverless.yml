@@ -6,6 +6,8 @@ provider:
   stage: ${opt:stage, "qa"}
   environment:
     ${file(./config/env.${self:provider.stage}.json)}
+  iamRoleStatements:
+    ${file(./config/serverless/dd.iam.role.yaml)}
 
 custom:
   schedulerRate: rate(1 minute)
